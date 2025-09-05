@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'inter': ['Inter', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +64,36 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				neutral: {
+					50: 'hsl(var(--neutral-50))',
+					100: 'hsl(var(--neutral-100))',
+					200: 'hsl(var(--neutral-200))',
+					600: 'hsl(var(--neutral-600))',
+					900: 'hsl(var(--neutral-900))',
 				}
+			},
+			spacing: {
+				'1': 'var(--space-1)',
+				'2': 'var(--space-2)', 
+				'3': 'var(--space-3)',
+				'4': 'var(--space-4)',
+				'6': 'var(--space-6)',
+				'8': 'var(--space-8)',
+				'12': 'var(--space-12)',
+				'16': 'var(--space-16)',
+			},
+			boxShadow: {
+				'sm': 'var(--shadow-sm)',
+				'md': 'var(--shadow-md)',
+				'lg': 'var(--shadow-lg)',
+				'xl': 'var(--shadow-xl)',
+				'accent': 'var(--shadow-accent)',
+			},
+			transitionDuration: {
+				'fast': '150ms',
+				'smooth': '300ms',
+				'slow': '500ms',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
