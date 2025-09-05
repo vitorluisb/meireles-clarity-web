@@ -16,7 +16,7 @@ const Hero = () => {
 
   const benefits = [
     "Consultoria especializada",
-    "Tecnologia de ponta",
+    "Experiência comprovada",
     "Atendimento personalizado"
   ];
 
@@ -39,7 +39,7 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-accent/20 rounded-full backdrop-blur-sm">
               <TrendingUp size={16} className="mr-2 text-accent" />
-              <span className="text-sm font-medium">Transformação Digital Contábil</span>
+              <span className="text-sm font-medium">Excelência em Contabilidade</span>
             </div>
 
             {/* Main Heading */}
@@ -113,9 +113,9 @@ const Hero = () => {
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-medium">Inovação Tecnológica</h4>
+                    <h4 className="font-medium">Experiência Sólida</h4>
                     <p className="text-sm text-primary-foreground/70">
-                      Utilizamos as mais avançadas ferramentas digitais
+                      Mais de 15 anos de expertise em contabilidade
                     </p>
                   </div>
                 </div>

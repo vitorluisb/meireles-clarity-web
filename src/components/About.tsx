@@ -138,15 +138,15 @@ const About = () => {
           </div>
         </div>
 
-        {/* Stats & Technology */}
+        {/* Stats & Experience */}
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-2xl lg:text-3xl font-bold mb-6">
-              Tecnologia de Ponta
+              Resultados que Falam
             </h3>
             <p className="text-muted-foreground mb-8">
-              Investimos constantemente em tecnologia para oferecer soluções 
-              mais eficientes, seguras e acessíveis aos nossos clientes.
+              Nossa experiência e dedicação se refletem nos números e na 
+              satisfação dos nossos clientes ao longo dos anos.
             </p>
             
             <div className="grid grid-cols-2 gap-6">
@@ -163,12 +163,12 @@ const About = () => {
           <div className="relative">
             <img
               src={technologyImage}
-              alt="Tecnologia contábil avançada"
+              alt="Equipe especializada em contabilidade"
               className="rounded-2xl shadow-xl w-full"
             />
             <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground p-4 rounded-xl shadow-lg">
-              <div className="text-xl font-bold">100%</div>
-              <div className="text-sm">Digital</div>
+              <div className="text-xl font-bold">15+</div>
+              <div className="text-sm">Anos</div>
             </div>
           </div>
         </div>

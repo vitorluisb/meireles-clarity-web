@@ -53,19 +53,19 @@ const Services = () => {
 
   const differentials = [
     {
-      icon: Smartphone,
-      title: "Tecnologia Avançada",
-      description: "Plataforma digital integrada para gestão em tempo real"
-    },
-    {
       icon: Clock,
       title: "Atendimento Ágil",
       description: "Respostas rápidas e processos otimizados"
     },
     {
       icon: PieChart,
-      title: "Relatórios Inteligentes",
-      description: "Dashboard com indicadores estratégicos personalizados"
+      title: "Relatórios Detalhados",
+      description: "Análises completas com indicadores estratégicos personalizados"
+    },
+    {
+      icon: Users,
+      title: "Equipe Especializada",
+      description: "Profissionais experientes dedicados ao seu sucesso"
     }
   ];
 
