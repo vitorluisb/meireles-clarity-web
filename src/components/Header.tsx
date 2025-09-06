@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,20 +17,14 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
   const navigationItems = [
-    { label: 'Início', href: 'hero' },
-    { label: 'Sobre', href: 'about' },
-    { label: 'Serviços', href: 'services' },
-    { label: 'Contato', href: 'contact' },
+    { label: 'Início', href: '/' },
+    { label: 'Sobre', href: '/sobre' },
+    { label: 'Serviços', href: '/servicos' },
+    { label: 'Contato', href: '/contato' },
   ];
+
+  const isActive = (href: string) => location.pathname === href;
 
   return (
     <header 
@@ -41,7 +37,7 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">M</span>
             </div>
@@ -49,18 +45,22 @@ const Header = () => {
               <h1 className="text-xl font-bold text-primary">Meireles</h1>
               <p className="text-sm text-muted-foreground -mt-1">Assessoria Contábil</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <button
+              <Link
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-accent transition-colors duration-fast font-medium"
+                to={item.href}
+                className={`font-medium transition-colors duration-fast ${
+                  isActive(item.href)
+                    ? 'text-accent'
+                    : 'text-foreground hover:text-accent'
+                }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -70,11 +70,8 @@ const Header = () => {
               <Phone size={16} />
               <span>(11) 99999-9999</span>
             </div>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="btn-accent"
-            >
-              Fale Conosco
+            <Button asChild className="btn-accent">
+              <Link to="/contato">Fale Conosco</Link>
             </Button>
           </div>
 
@@ -94,28 +91,28 @@ const Header = () => {
         <div className="lg:hidden bg-background/95 backdrop-blur-sm border-t border-border">
           <div className="container-custom py-4 space-y-4">
             {navigationItems.map((item) => (
-              <button
+              <Link
                 key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left py-2 text-foreground hover:text-accent transition-colors font-medium"
+                to={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block w-full text-left py-2 font-medium transition-colors ${
+                  isActive(item.href)
+                    ? 'text-accent'
+                    : 'text-foreground hover:text-accent'
+                }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
             <div className="pt-4 border-t border-border space-y-3">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone size={16} />
                 <span>(11) 99999-9999</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                <Mail size={16} />
-                <span>contato@meireles.com.br</span>
-              </div>
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="btn-accent w-full"
-              >
-                Fale Conosco
+              <Button asChild className="btn-accent w-full">
+                <Link to="/contato" onClick={() => setIsMobileMenuOpen(false)}>
+                  Fale Conosco
+                </Link>
               </Button>
             </div>
           </div>
